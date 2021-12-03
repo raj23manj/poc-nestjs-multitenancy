@@ -27,4 +27,10 @@ export class User extends Model {
     allowNull: false,
   })
   gender: string;
+
+  // https://github.com/RobinBuschmann/sequelize-typescript/issues/750
+  // https://replit.com/@raj23manj/FrequentLostGraphicslibrary#index.ts
+  public static sayHello(): Promise<User[]> {
+    return this.schema('public').findAll();
+  }
 }

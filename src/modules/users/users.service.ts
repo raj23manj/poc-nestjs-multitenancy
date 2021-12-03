@@ -37,4 +37,8 @@ export class UsersService {
       .schema('public')
       .findOne<User>({ where: { id } });
   }
+
+  findAllStatic(): Promise<User[]> {
+    return this.userRepository.sayHello();
+  }
 }
