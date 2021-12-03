@@ -22,19 +22,19 @@ export class UsersService {
     return await this.userRepository.findOne<User>({ where: { id } });
   }
 
-  // async createPb(user: UserDto): Promise<User> {
-  //   return await this.userRepository.schema('public').create<User>(user);
-  // }
+  async createPb(user: UserDto): Promise<User> {
+    return await this.userRepository.schema('public').create<User>(user);
+  }
 
-  // async findOneByEmailPb(email: string): Promise<User> {
-  //   return await this.userRepository
-  //     .schema('public')
-  //     .findOne<User>({ where: { email } });
-  // }
+  async findOneByEmailPb(email: string): Promise<User> {
+    return await this.userRepository
+      .schema('public')
+      .findOne<User>({ where: { email } });
+  }
 
-  // async findOneByIdPb(id: number): Promise<User> {
-  //   return await this.userRepository
-  //     .schema('public')
-  //     .findOne<User>({ where: { id } });
-  // }
+  async findOneByIdPb(id: number): Promise<User> {
+    return await this.userRepository
+      .schema('public')
+      .findOne<User>({ where: { id } });
+  }
 }
